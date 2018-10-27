@@ -1,4 +1,19 @@
 # Editor Files
 *~
 *.*.swp
+*_patched
+
+# Cache Files
+__pycache__
+.ipynb_checkpoints/
+
+# Settings Files
+settings.py
+
+# Log files, nohup and such
+*.log
+*.out
+
+# Data Files
+data/
 
