@@ -11,7 +11,8 @@ import unittest
 from bs4 import BeautifulSoup
 
 from wrappers.logger import loggerFetch
-from wrappers.sn import driverInitialize,driverFinalize,displayInitialize,displayFinalize
+from wrappers.sn import driverInitialize, \
+    driverFinalize, displayInitialize, displayFinalize
 
 ###
 # Django Settings for future
@@ -60,8 +61,10 @@ class TestSuite(unittest.TestCase):
     def setUp(self):
         self.logger = loggerFetch('info')
         self.logger.info('BEGIN PROCESSING')
-        self.display = displayInitialize(1)  # Pass 0 for headless
-        self.driver = driverInitialize(browser='firefox') #, path='/path/to/firefox/')
+        # Pass 0 for headless
+        self.display = displayInitialize(1)
+        #, path='/path/to/firefox/')
+        self.driver = driverInitialize(browser='firefox')
         self.url = URL
 
     def tearDown(self):
@@ -77,7 +80,9 @@ class TestSuite(unittest.TestCase):
     def test_it_worked(self):
         result = 'SUCCESS'
         self.driver.get(URL)
-        self.assertIn('Welcome to Django', self.driver.title)
+        self.assertIn(
+            'Django: the Web framework for perfectionists with deadlines.',
+            self.driver.title)
         # self.assertEqual('SUCCESS', result)
 
 if __name__ == '__main__':

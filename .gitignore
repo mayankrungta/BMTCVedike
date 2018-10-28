@@ -2,6 +2,8 @@
 *~
 *.*.swp
 *_patched
+.#*
+\#*#
 
 # Cache Files
 __pycache__
