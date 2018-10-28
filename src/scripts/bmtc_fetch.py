@@ -333,15 +333,16 @@ class TestSuite(unittest.TestCase):
     def tearDown(self):
         self.logger.info('...END PROCESSING')
 
+    def test_fetch_timetable_details(self):
+        result = fetch_timetable_details(self.logger, dirname=DATA_DIR)
+        self.assertEqual(result, 0)
+        
     def test_fetch_bmtc_data(self):
-        dirname = '../../data/'
-        #result = fetch_bmtc_data(self.logger, dirname=dirname)
-        result = fetch_timetable_details(self.logger, dirname=dirname)
+        result = fetch_bmtc_data(self.logger, dirname=dirname)
         self.assertEqual(result, 0)
         
     def test_parse_bmtc_data(self):
-        dirname = '../../data/'
-        result = parse_bmtc_data(self.logger, dirname=dirname)
+        result = parse_bmtc_data(self.logger, dirname=DATA_DIR)
         self.assertEqual(result, 0)
         
 if __name__ == '__main__':
