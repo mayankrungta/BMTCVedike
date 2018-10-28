@@ -12,6 +12,15 @@ GET STARTED
 # Set the environment
 $ pip install -r requirements.txt
 
+###
 # Begin the crawls
-$ python fetch...
+###
+
+# Fetch all the BMTC data
+$ python bmtc_fetch.py TestSuite.test_fetch_bmtc_data
+
+# Fetch only timetable details and selectively download bus routes
+$ python bmtc_fetch.py TestSuite.test_fetch_timetable_details 
+
+Note: Logs can be diverted to {REPO_DIR}/logs
 

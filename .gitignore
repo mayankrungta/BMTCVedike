@@ -13,6 +13,7 @@ settings.py
 # Log files, nohup and such
 *.log
 *.out
+logs/
 
 # Data Files
 data/
